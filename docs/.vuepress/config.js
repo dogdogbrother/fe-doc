@@ -17,6 +17,15 @@ module.exports = {
         path: '/dialog/'
       },
       {
+        title: '网络请求',
+        children: [
+          {
+            title: '全局的定义方式',
+            path:'/http/example/'
+          }
+        ]
+      },
+      {
         title: '此文档的维护与开发',
         path: '/doc/'
       }
