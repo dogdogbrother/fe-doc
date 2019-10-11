@@ -20,7 +20,7 @@ module.exports = {
         title: '网络请求',
         children: [
           {
-            title: '全局的定义方式',
+            title: '从0开始发送HTTP请求',
             path:'/http/example/'
           }
         ]
