@@ -13,6 +13,10 @@ module.exports = {
         ]
       },
       {
+        title: 'dialog对话框',
+        path: '/dialog/'
+      },
+      {
         title: '此文档的维护与开发',
         path: '/doc/'
       }
