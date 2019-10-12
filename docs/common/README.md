@@ -6,6 +6,8 @@
 包含模板下载，上传导入，示例如下：
 ![uploadAndDowndemo](../public/images/uploadAndDowndemo.png)
 ```JavaScript
+import uploadAndDowndemo from '@/components/uploadAndDowndemo'
+
 <uploadAndDowndemo :schema="schema"></uploadAndDowndemo>
 ```
 
@@ -26,6 +28,8 @@
 
 ![provinceUI](../public/images/provinceUI.png)
 ```JavaScript
+import provinceUI from '@/components/provinceUI'
+
 <provinceUI v-model="filters.province" @selectChange="selectChange" />
 ```
 + **prop**
@@ -48,17 +52,23 @@
 通常用于点击选择产品按钮出现，使用方法示例如下：
 
 ```JavaScript
-chooseProduct () {
-    let _this = this
-    let parameter = {
-    pitchOn: _this.totalData.dynamicTags,
-    requestURL: URLS.MEMBER.MEMBER_INDUCTION.CONDITION.queryProduct,
-    update (data) {
-        _this.dynamicTags = JSON.parse(JSON.stringify(data))
+import chooseProduct from '@/components/choose-product'
+
+export default {
+    methods: {
+        chooseProduct () {
+            let _this = this
+            let parameter = {
+            pitchOn: _this.totalData.dynamicTags,
+            requestURL: URLS.MEMBER.MEMBER_INDUCTION.CONDITION.queryProduct,
+            update (data) {
+                _this.dynamicTags = JSON.parse(JSON.stringify(data))
+            }
+            }
+            this.$modal.show(chooseProduct, parameter, modelConfig)
+        },
     }
-    }
-    this.$modal.show(chooseProduct, parameter, modelConfig)
-},
+}
 ```
   
 ## 4. 大、中、小分类组件
@@ -104,16 +114,22 @@ export default {
 通常用于点击选择产品按钮出现，使用方法示例如下：
 
 ```JavaScript
-showProductDialog () {
-    let _this = this
-    this.$modal.show(SelectProduct, {
-        selectList: _this.productList,
-        update: (ev) => {
-            _this.productList = ev
-            _this.productList.forEach(ele => {
-            _this.filters.productId += `${ele.uniqueId},`
-            })
-        }
-    }, modelConfig)
-},
+import SelectProduct from '@/components/product/select-product'
+
+export default {
+    methods: {
+        showProductDialog () {
+            let _this = this
+            this.$modal.show(SelectProduct, {
+                selectList: _this.productList,
+                update: (ev) => {
+                    _this.productList = ev
+                    _this.productList.forEach(ele => {
+                    _this.filters.productId += `${ele.uniqueId},`
+                    })
+                }
+            }, modelConfig)
+        },
+    }
+}
 ```
