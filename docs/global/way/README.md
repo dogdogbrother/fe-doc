@@ -2,7 +2,7 @@
 >**"全局"的定义包含了注册在全局下的组件/mixin/配置,如果你需要定义,请参照下面的指示** 
 ## 注册全局组件
 1. 组件的文件请放在`src/components`对应的目录下,例如是用在对话框的组件,就放在`src/components/dialog`下即可.
-2. 编辑`src/common/global-components.js`文件,向componentList数字push如下对象即可全局的组件注册.迭代器函数会用`import()`遍历加载组件
+2. 编辑`src/common/global-components.js`文件,向componentList数组push如下对象即可全局的组件注册.迭代器函数会用`import()`遍历加载组件
 ```JavaScript
 { name: 'dialog-header', path: 'components/dialog/dialog-header', describe: '对话框的底部头部' }
 ```

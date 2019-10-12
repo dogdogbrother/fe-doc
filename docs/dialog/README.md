@@ -125,6 +125,66 @@ U省了一个foot-button的步骤.此组件在UI上有优化,如果内容填充�
 
 ![dialog-contcontent](../public/images/dialog-contcontent.png)
 
+### 6. 用于展示详情信息的UI组件dialog-detail-info
+
+dialog或者页面中经常会有需要展示详情的模块，样式基本统一，因此封装了一个UI组件放在全局，多数时候可配合dialog-card组件调用，样式如下：
+
+![dialog-detail-info](../public/images/dialog-detail-info.png)
+
++ **prop**
+  + `config`: 数组，label为左侧，text为右侧，如果接口返回的值需要前端进行相应处理后才能展示在页面上，此时可自行配置动态具名插槽属性otherType，自定义dom结构，以下为调用示例：
+
+```JavaScript
+<dialog-detail-info :config="config">
+  <template v-slot:otherType1>
+    <div v-if="detailInfo.stockNum < 0" style="color:#f56c6c;">{{detailInfo.stockNum}}</div>
+    <div v-else>{{detailInfo.stockNum}}</div>
+  </template>
+</dialog-detail-info>
+
+export default {
+  data () {
+    return {
+      config: [
+        [
+          { label: '产品名称', text: this.detailInfo.chName },
+          { label: '厂商编码', text: this.detailInfo.manufacturerCode }
+        ],
+        [
+          { label: '产品条码', text: this.detailInfo.barCode },
+          { label: '计量单位', text: this.detailInfo.specifications2 }
+        ],
+        [
+          { label: '库存', text: this.detailInfo.stockNum, otherType: 'otherType1' }
+        ]
+      ]
+    }
+  },
+}
+```
+### 7. 用于展示合计详情的UI组件dialog-amount
+
+详情dialog中经常用到，合计的字段个数可自行配置，如下：
+
+![dialog-amount](../public/images/dialog-amount.png)
+
++ **prop**
+  + `dataInfo`: 配置项，数组，调用示例如下：
+
+```JavaScript
+<dialog-amount :dataInfo="dataInfo"></dialog-amount>
+
+export default {
+  data () {
+    return {
+      dataInfo: [
+        ['总数量', '总金额'],
+        [this.detailInfo.totalNum, this.detailInfo.totalAmount]
+      ]
+    }
+  }
+}
+```
 
 
 

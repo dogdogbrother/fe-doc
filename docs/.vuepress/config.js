@@ -22,6 +22,10 @@ module.exports = {
         path: '/dialog/'
       },
       {
+        title: '常用的组件',
+        path: '/common/'
+      },
+      {
         title: '网络请求',
         children: [
           {
