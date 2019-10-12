@@ -2,7 +2,7 @@ module.exports = {
   title: '前端开发手册',
   description: '瑞合的后台系统的开发文档',
   head: [
-    ['link', { rel: 'shortcut icon', type: "image/x-icon", href: `../public/icon/favicon.ico` }]
+    ['link', { rel: 'icon', href: `../static/favicon.ico` }]
   ],
 
 
