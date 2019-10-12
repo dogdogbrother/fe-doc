@@ -117,13 +117,13 @@ U省了一个foot-button的步骤.此组件在UI上有优化,如果内容填充�
 ```
 
 + **event**
-  + `close` 函数返回的是Boolean,相应的代表用户点击了取消和确认.
+  + `close(true)` 函数的参数是Boolean,相应的代表用户点击了取消和确认.
 
 ***tip*** 还有一个类似的布局组件 (TODO:锚点)
 
 效果如下:
 
-![dialog-step](../public/images/dialog-step.png)
+![dialog-contcontent](../public/images/dialog-contcontent.png)
 
 
 
