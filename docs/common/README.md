@@ -57,12 +57,11 @@ import chooseProduct from '@/components/choose-product'
 export default {
     methods: {
         chooseProduct () {
-            let _this = this
             let parameter = {
-            pitchOn: _this.totalData.dynamicTags,
+            pitchOn: this.totalData.dynamicTags,
             requestURL: URLS.MEMBER.MEMBER_INDUCTION.CONDITION.queryProduct,
             update (data) {
-                _this.dynamicTags = JSON.parse(JSON.stringify(data))
+                this.dynamicTags = JSON.parse(JSON.stringify(data))
             }
             }
             this.$modal.show(chooseProduct, parameter, modelConfig)
@@ -119,13 +118,12 @@ import SelectProduct from '@/components/product/select-product'
 export default {
     methods: {
         showProductDialog () {
-            let _this = this
             this.$modal.show(SelectProduct, {
-                selectList: _this.productList,
+                selectList: this.productList,
                 update: (ev) => {
-                    _this.productList = ev
-                    _this.productList.forEach(ele => {
-                    _this.filters.productId += `${ele.uniqueId},`
+                    this.productList = ev
+                    this.productList.forEach(ele => {
+                    this.filters.productId += `${ele.uniqueId},`
                     })
                 }
             }, modelConfig)

@@ -7,7 +7,7 @@
     <meta name="description" content="瑞合的后台系统的开发文档">
     <link rel="icon" href="/static/favicon.ico">
     
-    <link rel="preload" href="/assets/css/0.styles.a16d6224.css" as="style"><link rel="preload" href="/assets/js/app.9cf9acdc.js" as="script"><link rel="preload" href="/assets/js/2.3adda200.js" as="script"><link rel="preload" href="/assets/js/4.d00cb409.js" as="script"><link rel="prefetch" href="/assets/js/10.2d9722e2.js"><link rel="prefetch" href="/assets/js/11.bc334b2d.js"><link rel="prefetch" href="/assets/js/12.de608421.js"><link rel="prefetch" href="/assets/js/13.e0058417.js"><link rel="prefetch" href="/assets/js/14.c5544fc2.js"><link rel="prefetch" href="/assets/js/3.0f1866b1.js"><link rel="prefetch" href="/assets/js/5.49416518.js"><link rel="prefetch" href="/assets/js/6.fe25dfbd.js"><link rel="prefetch" href="/assets/js/7.29f20d50.js"><link rel="prefetch" href="/assets/js/8.1f394c8b.js"><link rel="prefetch" href="/assets/js/9.9f30c4dc.js">
+    <link rel="preload" href="/assets/css/0.styles.a16d6224.css" as="style"><link rel="preload" href="/assets/js/app.914111aa.js" as="script"><link rel="preload" href="/assets/js/2.3adda200.js" as="script"><link rel="preload" href="/assets/js/4.39cca2b0.js" as="script"><link rel="prefetch" href="/assets/js/10.3ed08e2d.js"><link rel="prefetch" href="/assets/js/11.bc334b2d.js"><link rel="prefetch" href="/assets/js/12.6362160d.js"><link rel="prefetch" href="/assets/js/13.e0058417.js"><link rel="prefetch" href="/assets/js/14.c5544fc2.js"><link rel="prefetch" href="/assets/js/3.1f86e9f5.js"><link rel="prefetch" href="/assets/js/5.49416518.js"><link rel="prefetch" href="/assets/js/6.fe25dfbd.js"><link rel="prefetch" href="/assets/js/7.29f20d50.js"><link rel="prefetch" href="/assets/js/8.1f394c8b.js"><link rel="prefetch" href="/assets/js/9.54737863.js">
     <link rel="stylesheet" href="/assets/css/0.styles.a16d6224.css">
   </head>
   <body>
@@ -24,12 +24,11 @@
 <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
     methods<span class="token punctuation">:</span> <span class="token punctuation">{</span>
         <span class="token function">chooseProduct</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword">let</span> _this <span class="token operator">=</span> <span class="token keyword">this</span>
             <span class="token keyword">let</span> parameter <span class="token operator">=</span> <span class="token punctuation">{</span>
-            pitchOn<span class="token punctuation">:</span> _this<span class="token punctuation">.</span>totalData<span class="token punctuation">.</span>dynamicTags<span class="token punctuation">,</span>
+            pitchOn<span class="token punctuation">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>totalData<span class="token punctuation">.</span>dynamicTags<span class="token punctuation">,</span>
             requestURL<span class="token punctuation">:</span> <span class="token constant">URLS</span><span class="token punctuation">.</span><span class="token constant">MEMBER</span><span class="token punctuation">.</span><span class="token constant">MEMBER_INDUCTION</span><span class="token punctuation">.</span><span class="token constant">CONDITION</span><span class="token punctuation">.</span>queryProduct<span class="token punctuation">,</span>
             <span class="token function">update</span> <span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                _this<span class="token punctuation">.</span>dynamicTags <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">)</span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span>dynamicTags <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">)</span>
             <span class="token punctuation">}</span>
             <span class="token punctuation">}</span>
             <span class="token keyword">this</span><span class="token punctuation">.</span>$modal<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span>chooseProduct<span class="token punctuation">,</span> parameter<span class="token punctuation">,</span> modelConfig<span class="token punctuation">)</span>
@@ -58,13 +57,12 @@
 <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
     methods<span class="token punctuation">:</span> <span class="token punctuation">{</span>
         <span class="token function">showProductDialog</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword">let</span> _this <span class="token operator">=</span> <span class="token keyword">this</span>
             <span class="token keyword">this</span><span class="token punctuation">.</span>$modal<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span>SelectProduct<span class="token punctuation">,</span> <span class="token punctuation">{</span>
-                selectList<span class="token punctuation">:</span> _this<span class="token punctuation">.</span>productList<span class="token punctuation">,</span>
+                selectList<span class="token punctuation">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>productList<span class="token punctuation">,</span>
                 <span class="token function-variable function">update</span><span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token parameter">ev</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-                    _this<span class="token punctuation">.</span>productList <span class="token operator">=</span> ev
-                    _this<span class="token punctuation">.</span>productList<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">ele</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-                    _this<span class="token punctuation">.</span>filters<span class="token punctuation">.</span>productId <span class="token operator">+=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>ele<span class="token punctuation">.</span>uniqueId<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">,</span><span class="token template-punctuation string">`</span></span>
+                    <span class="token keyword">this</span><span class="token punctuation">.</span>productList <span class="token operator">=</span> ev
+                    <span class="token keyword">this</span><span class="token punctuation">.</span>productList<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">ele</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+                    <span class="token keyword">this</span><span class="token punctuation">.</span>filters<span class="token punctuation">.</span>productId <span class="token operator">+=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>ele<span class="token punctuation">.</span>uniqueId<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">,</span><span class="token template-punctuation string">`</span></span>
                     <span class="token punctuation">}</span><span class="token punctuation">)</span>
                 <span class="token punctuation">}</span>
             <span class="token punctuation">}</span><span class="token punctuation">,</span> modelConfig<span class="token punctuation">)</span>
@@ -76,6 +74,6 @@
       <a href="/dialog/" class="prev">dialog对话框</a></span> <span class="next"><a href="/http/example/">从0开始发送HTTP请求</a>
       →
     </span></p></div> </main></div><div class="global-ui"></div></div>
-    <script src="/assets/js/app.9cf9acdc.js" defer></script><script src="/assets/js/2.3adda200.js" defer></script><script src="/assets/js/4.d00cb409.js" defer></script>
+    <script src="/assets/js/app.914111aa.js" defer></script><script src="/assets/js/2.3adda200.js" defer></script><script src="/assets/js/4.39cca2b0.js" defer></script>
   </body>
 </html>
