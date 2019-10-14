@@ -39,6 +39,10 @@ module.exports = {
         ]
       },
       {
+        title: '自动化脚本',
+        path: '/shell/'
+      },
+      {
         title: '此文档的维护与开发',
         path: '/doc/'
       }

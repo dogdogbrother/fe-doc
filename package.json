@@ -5,13 +5,15 @@
   "main": "index.js",
   "scripts": {
     "dev": "vuepress dev docs",
-    "build": "vuepress build docs"
+    "build": "vuepress build docs",
+    "push": "node shell"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "mddir": "^1.1.1"
+    "mddir": "^1.1.1",
+    "shelljs": "^0.8.3"
   },
   "devDependencies": {
     "vuepress": "^1.2.0"

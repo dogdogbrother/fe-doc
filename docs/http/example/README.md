@@ -3,7 +3,15 @@
 
 >**在此我会举个例子来说明API层是如何调用的**
 
-1. 首先定义 **url** ,举例我们要请求会 *员档案/会员一览* 下的列表接口`/crm/memberinfo/querymember`
+#### 1. 我们要先检查`proxy`跨域代理是否正确.
+
+```js
+const proxyConfig = getConfig('胡坤')
+```
+
+如上代码,我们连接的是胡坤的个人服务进行网络请求
+
+#### 2. 定义 **url** ,举例我们要请求 *会员档案/会员一览* 下的列表接口`/crm/memberinfo/querymember`
 
 那么我们就要找到对应的js文件.`constant/url/member.js`
 
@@ -18,7 +26,7 @@ const MEMBER = {
 }
 ```
 
-2. 直接页面调用即可
+#### 3. 直接页面调用即可
 
 ```js
 this.$http.post({
