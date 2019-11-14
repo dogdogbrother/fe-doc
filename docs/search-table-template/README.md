@@ -1,10 +1,7 @@
 # 搜索表格页模板
 
-## 使用示
-```
-
-```
-
+## 使用示例
+模板
 ```html
   <search-table-page
       class="table-container"
@@ -32,6 +29,34 @@
         <!-- 这里放置表格的内容 -->
       </template>
     </search-table-page>
+```
+
+script代码
+```js
+import SearchTablePage from '@/layout/search-table-page.vue'
+import listMixin from '@/mixins/search-list'
+import Wrap from '@/layout/wrap-main'
+export default {
+  components: {
+    'search-table-page': SearchTablePage
+  },
+  mixins: [listMixin],
+  data () {
+    return {
+      filters: {
+        // 查询条件
+      },
+      listUrl: this.URL.BASIC_DATA.USER.INFO.LIST,
+      searchUrl: this.URL.BASIC_DATA.USER.INFO.LIST,
+      editStatusUrl: this.URL.BASIC_DATA.USER.INFO.EDIT_STATUS,
+      idAttr: 'empId',
+      idsAttr: 'empIdList',
+      activeStatus: 1,
+      stopStatus: 0
+    }
+  },
+  methods: {}
+}
 ```
 ## search-table-page 组件详解
 ### 插槽
