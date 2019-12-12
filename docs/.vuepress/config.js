@@ -26,6 +26,10 @@ module.exports = {
         path: '/common/'
       },
       {
+        title: '字典',
+        path: '/dictionary/'
+      },
+      {
         title: '网络请求',
         children: [
           {
