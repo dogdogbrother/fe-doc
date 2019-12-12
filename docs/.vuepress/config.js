@@ -22,6 +22,10 @@ module.exports = {
         path: '/dialog/'
       },
       {
+        title: '搜索表格页模板',
+        path: '/search-table-template/'
+      },
+      {
         title: '常用的组件',
         path: '/common/'
       },
