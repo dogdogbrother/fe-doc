@@ -4,10 +4,25 @@ module.exports = {
   head: [
     ['link', { rel: 'icon', href: `/static/favicon.ico` }]
   ],
-
-
   themeConfig: {
     sidebar: [
+      {
+        title: '常量',
+        children: [
+          {
+            title: '字典',
+            path: '/constant/dictionary/'
+          },
+          {
+            title: '请求地址',
+            path: '/constant/url/'
+          },
+          {
+            title: '项目根路径配置',
+            path: '/constant/config/'
+          },
+        ]
+      },
       {
         title: '全局',
         children: [
@@ -18,19 +33,41 @@ module.exports = {
         ]
       },
       {
-        title: 'dialog对话框',
-        path: '/dialog/'
+        title: '第三方库',
+        children: [
+          {
+            title: '弹框',
+            path: '/third-party/dialog/'
+          }
+        ]
       },
       {
-        title: '搜索表格页模板',
-        path: '/search-table-template/'
+        title: '布局组件',
+        children: [
+          {
+            title: '列表搜索页',
+            path: '/layout/search-table-page/',
+          },
+          {
+            title: '弹窗的容器',
+            path: '/layout/dialog-wrap/',
+          },
+          {
+            title: 'Wrap',
+            path: '/layout/wrap/',
+          },
+          {
+            title: '内容容器',
+            path: '/layout/dialog-card/',
+          },
+        ]
       },
       {
         title: '常用的组件',
         path: '/common/'
       },
       {
-        title: '网络请求',
+        title: '服务',
         children: [
           {
             title: '从0开始发送HTTP请求',
